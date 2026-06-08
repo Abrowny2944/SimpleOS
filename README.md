@@ -1,0 +1,2 @@
+# SimpleOS
+A custom WebOS
