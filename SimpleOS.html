@@ -112,14 +112,32 @@
     </head>
     <body>
       <dialog id="welcomepopup">
-        <h1><b>Welcome to Simple OS</b></h1><form method="dialog"><button class="startbutton"><b>Start</b></button></form>
+        <h1><b>Welcome to Simple OS</b></h1><form method="dialog"><button class="startbutton"><b>Continue</b></button></form>
       </dialog>
       <script>
         const popup = document.getElementById('welcomepopup');
         popup.showModal();
+        var launcher = 0
       </script>
       <div id="taskbar">
-        <button>o</button>
+        <button onclick="
+          if (launcher == 1) {
+            launcher = 0
+            document.getElementById('launcher').style.opacity = '0';
+            document.getElementById('launcher').style.pointerEvents = 'none';
+            document.getElementById('launcher').style.userSelect = 'none';
+          } else {
+            launcher = 1
+            document.getElementById('launcher').style.opacity = '1';
+            document.getElementById('launcher').style.pointerEvents = 'auto';
+            document.getElementById('launcher').style.userSelect = 'auto';
+          }">
+            <div class="circle"></div>
+          </button>
+      </div>
+
+      <div id="launcher">
+        LAUNCHER
       </div>
     </body>
   </html>
