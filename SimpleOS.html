@@ -129,6 +129,62 @@
         .appdrag:active {
           cursor: grabbing
         }
+
+        .appdrag button {
+          background-color: rgba(60,75,90,0.4);
+          color: rgb(120,150,180);
+          border: solid 1px transparent;
+          border-radius: 50%;
+          padding: 15px;
+          outline: none;
+          transition: linear 0.2s;
+          width:30px;
+          height:30px;
+          display: flex inline;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .appdrag button:hover {
+          background-color: rgba(120,150,180,0.4);
+          color: rgb(20,25,30);
+        }
+
+        .app {
+          background-color: white;
+          height: 300px;
+          margin-top: 10px;
+          outline: solid 10px rgba(20,25,30,0.6);
+          border-radius: 0 0 10px 10px;
+          padding: 5px;
+          user-select: text;
+          cursor: auto;
+        }
+
+        #time {
+          display:flex inline;
+          justify-content: center;
+          border-radius: 10px;
+          padding: 2px;
+          background-color: rgba(60,75,90,0.4);
+          width: 180px;
+        }
+
+        textarea {
+          width: 100%;
+          height: calc(100% - 25px);
+          resize: none;
+          box-sizing: border-box;
+          padding: 12px;
+          font-family: inherit;
+          font-size: 1rem;
+          outline: none;
+          border: solid 1px lightgray;
+        }
+
+        .selectedapp {
+          outline: solid 2px cyan;
+        }
       </style>
     </head>
     <body>
