@@ -246,5 +246,56 @@
           <iframe src="https://wttr.in" width="100%" height="150" frameborder="0"></iframe>
         </div>
       </div>
+
+      <script>
+        const appWindows = document.querySelectorAll('.appdrag');
+        appWindows.forEach(win => {
+          let activeX = 0;
+          let activeY = 0;
+          let offsetX = 0;
+          let offsetY = 0;
+
+          win.addEventListener('mousedown', (e) => {
+            if (e.target.tagName === 'BUTTON' || e.target.closest('.app')) {
+              return;
+            }
+
+            e.preventDefault();
+
+            offsetX = e.clientX;
+            offsetY = e.clientY;
+
+            document.addEventListener('mousemove', dragWindow);
+            document.addEventListener('mouseup', closeDragWindow);
+          });
+
+          function dragWindow(e) {
+            e.preventDefault();
+
+            activeX = offsetX - e.clientX;
+            activeY = offsetY - e.clientY;
+
+            offsetX = e.clientX;
+            offsetY = e.clientY;
+
+            win.style.top = (win.offsetTop - activeY) + "px";
+            win.style.left = (win.offsetLeft - activeX) + "px";
+          }
+
+          function closeDragWindow() {
+            document.removeEventListener('mousemove', dragWindow);
+            document.removeEventListener('closeDragWindow');
+          }
+        });
+
+        function updateTime() {
+          var currentTime = new
+          Date().toLocaleString();
+          var timeText = document.querySelector("#time");
+          timeText.innerHTML = currentTime;
+        }
+
+        setInterval(updateTime, 1000);
+      </script>
     </body>
   </html>
