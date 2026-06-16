@@ -189,6 +189,11 @@
         .app button {
           all:unset;
         }
+
+        .appicon {
+          margin-left: 6px;
+          margin-right: 6px;
+        }
       </style>
     </head>
     <body>
@@ -216,9 +221,9 @@
             <div class="circle"></div>
           </button>
           <span style="display: flex;">
-            <button onclick="document.getElementById('documentedit-app').style.display = 'block'">📓</button>
-            <button onclick="document.getElementById('weather-app').style.display = 'block'">🌦</button>
-            <button onclick="document.getElementById('settings-app').style.display = 'block'">⚙️</button>
+            <button class="appicon" onclick="document.getElementById('documentedit-app').style.display = 'block'">📓</button>
+            <button class="appicon" onclick="document.getElementById('weather-app').style.display = 'block'">🌦</button>
+            <button class="appicon" onclick="document.getElementById('settings-app').style.display = 'block'">⚙️</button>
           </span>
           <span id="time" style="margin-right:10px;">00/00/0000 00:00 XX</span>
       </div>
