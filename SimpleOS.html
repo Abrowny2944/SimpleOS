@@ -8,9 +8,21 @@
       <link rel="icon" path="image/png" href="https://abrowny2944.neocities.org/rubber-duck.png">
 
       <style>
+        html, body {
+          margin: 0;
+          padding: 0;
+          height: 100%;
+        }
+
         body {
           background-image: url('https://abrowny2944.neocities.org/VMBG.png');
           font-family: "Monomaniac One";
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+          min-height: 100vh;
+          min-height: 100dvh;
         }
 
         button {
@@ -124,6 +136,8 @@
           user-select: none;
           cursor: grab;
           display: none;
+          top: calc(50% - 222px);
+          left: calc(50% - 200px);
         }
 
         .appdrag:active {
