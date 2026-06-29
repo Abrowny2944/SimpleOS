@@ -144,7 +144,7 @@
           cursor: grabbing
         }
 
-        .appdrag button {
+        .appdrag > button {
           background-color: rgba(60,75,90,0.4);
           color: rgb(120,150,180);
           border: solid 1px transparent;
@@ -159,7 +159,7 @@
           align-items: center;
         }
 
-        .appdrag button:hover {
+        .appdrag > button:hover {
           background-color: rgba(120,150,180,0.4);
           color: rgb(20,25,30);
         }
@@ -202,11 +202,22 @@
 
         .app button {
           all:unset;
+          cursor:pointer;
         }
 
         .appicon {
           margin-left: 6px;
           margin-right: 6px;
+        }
+
+        .menubtn {
+          color:white;
+        }
+
+        .menubtn:hover {
+          color: white;
+          background-color: none;
+          text-shadow: 0 0 5px white;
         }
       </style>
     </head>
@@ -276,13 +287,31 @@
         <div class="app" style="background-color: rgba(20,25,30,0.6); color:white;">
           Settings
           <br>
-          Wallpaper 
+          <button class="menubtn" onclick="
+          document.getElementById('settingWallpaperDiv').style.display = 'block'
+          document.getElementById('settingAboutDiv').style.display = 'none'
+          ">Wallpaper</button>
+          <button class="menubtn" onclick="
+          document.getElementById('settingAboutDiv').style.display = 'block'
+          document.getElementById('settingWallpaperDiv').style.display = 'none'
+          ">About</button>
           <br>
-          <div style="padding: 10px; border-radius: 10px; background-color: rgba(60,75,90,0.6);">
-            <button onclick="document.body.style.backgroundImage = `url('https://abrowny2944.neocities.org/VMBG.png')`"><image width="150px" src="https://abrowny2944.neocities.org/VMBG.png"></button>
-            <button onclick="document.body.style.backgroundImage = `url('https://abrowny2944.neocities.org/VMBG2.png')`"><image width="150px" src="https://abrowny2944.neocities.org/VMBG2.png"></button>
-            <button onclick="document.body.style.backgroundImage = `url('https://abrowny2944.neocities.org/VMBG3.png')`"><image width="150px" src="https://abrowny2944.neocities.org/VMBG3.png"></button>
+          <div id="settingWallpaperDiv" style="padding: 10px; border-radius: 10px; background-color: rgba(60,75,90,0.6);">
+            <button onclick="document.body.style.backgroundImage = `url('https://abrowny2944.neocities.org/VMBG.png')`"><img width="150px" src="https://abrowny2944.neocities.org/VMBG.png"></button>
+            <button onclick="document.body.style.backgroundImage = `url('https://abrowny2944.neocities.org/VMBG2.png')`"><img width="150px" src="https://abrowny2944.neocities.org/VMBG2.png"></button>
+            <button onclick="document.body.style.backgroundImage = `url('https://abrowny2944.neocities.org/VMBG3.png')`"><img width="150px" src="https://abrowny2944.neocities.org/VMBG3.png"></button>
             <input type="color" style="width: 150px; height: 84px; background-color: rgba(20,25,30,0.6); border: none;" value="#000000" oninput="document.body.style.backgroundImage = 'none'; document.body.style.backgroundColor = this.value;">
+          </div>
+          <div id="settingAboutDiv" style="padding: 10px; display:none; border-radius: 10px; background-color: rgba(60,75,90,0.6);">
+            SimpleOS version 0.1
+            <br>
+            <a style="color: skyblue;" href="https://github.com/Abrowny2944/SimpleOS">Source code</a>
+            <br>
+            <br>
+            System font: <a style="color:skyblue" href="https://fonts.google.com/specimen/Monomaniac+One">Monomaniac One</a>
+            <br>
+            <br>
+            Wallpapers rendered using: <a style="color:skyblue" href="https://www.shadertoy.com/">Shadertoy</a>
           </div>
         </div>
       </div>
